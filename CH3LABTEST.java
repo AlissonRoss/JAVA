@@ -37,15 +37,20 @@ public class ch3lab1 {
 						"\n Total Charge for hours with Package A: $"+total); }
 			
 				if (total > packageA){
-					double savingsB;
+					
 					if (hoursInt < 20) {
 						savingsB= (total - packageB);
 					} else {
 						savingsB = (total - (packageB + (hoursInt*1 - 20)));
 					}
 					
-
+					
 					savingsC= (total - packageC);
+					
+					if (savingsB < 0 || savingsC < 0){
+						
+						System.exit(0);
+					}
 					
 					JOptionPane.showMessageDialog(null,
 							"\n Savings if switched to Package B: $"+savingsB+
@@ -71,6 +76,10 @@ public class ch3lab1 {
 						"\n Total Charge for hours with Package B: $"+total);}
 				if (total > packageB){
 					savingsC= (total - packageC);
+					if (savingsC < 0){
+						
+						System.exit(0);
+					}
 				
 					JOptionPane.showMessageDialog(null,
 							"\n Savings if switching to Package C: $"+savingsC); }
