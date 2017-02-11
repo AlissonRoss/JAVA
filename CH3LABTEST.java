@@ -37,7 +37,14 @@ public class ch3lab1 {
 						"\n Total Charge for hours with Package A: $"+total); }
 			
 				if (total > packageA){
-					savingsB= (total - packageB);
+					double savingsB;
+					if (hoursInt < 20) {
+						savingsB= (total - packageB);
+					} else {
+						savingsB = (total - (packageB + (hoursInt*1 - 20)));
+					}
+					
+
 					savingsC= (total - packageC);
 					
 					JOptionPane.showMessageDialog(null,
