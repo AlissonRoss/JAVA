@@ -22,7 +22,7 @@ public class ch3lab1 {
 		/* String Statement with If Loop*/
 		
 		/*OUTER IF */
-		if (packageLetter.equals("A")) {
+		if (packageLetter.equalsIgnoreCase("A")) {
 			/* Checks for Hours entered*/
 			if (hoursInt <= 10 && hoursInt > 0) {
 				JOptionPane.showMessageDialog(null, 
@@ -30,7 +30,7 @@ public class ch3lab1 {
 			
 			else if (hoursInt > 10) {
 				
-				total= packageA+(hoursInt*2.00);
+				total= packageA+((hoursInt*2.00)-20);
 				
 				JOptionPane.showMessageDialog(null,
 						"\n Total Charge for hours with Package A: $"+total); }
@@ -47,14 +47,14 @@ public class ch3lab1 {
 		}
 		
 		/*Outer Else If*/
-		else if (packageLetter.equals("B")) {
+		else if (packageLetter.equalsIgnoreCase("B")) {
 			
 			if (hoursInt <= 20 && hoursInt > 0){
 				JOptionPane.showMessageDialog(null,
 						"\n Total for Package B: $"+packageB);}
 			
 			else if (hoursInt > 20){
-				total= packageB+(hoursInt*1.00);
+				total= packageB+((hoursInt*1.00)-20);
 				
 				JOptionPane.showMessageDialog(null,
 						"\n Total Charge for hours with Package B: $"+total);}
@@ -64,7 +64,7 @@ public class ch3lab1 {
 						"\n Invalid amount of hours");}
 			
 		}
-		else if (packageLetter.equals("C"))
+		else if (packageLetter.equalsIgnoreCase("C"))
 			if (hoursInt <= 30 && hoursInt > 0 || hoursInt > 30){
 			JOptionPane.showMessageDialog(null, 
 					"\n Total for unlimited hours package: $"+packageC);
