@@ -85,4 +85,4 @@ public class ch3lab1 {
 	
 	}		
 
-}.java
+}
