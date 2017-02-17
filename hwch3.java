@@ -15,7 +15,7 @@ public class hwch3 {
 		String input2 = JOptionPane.showInputDialog("Enter the number of miles that the package travelled: ");
 		double milesAmt=Double.parseDouble(input2);
 		
-		if (weightAmt > 0){
+		if (weightAmt > 0 && milesAmt > 0){
 			switch((int)Math.ceil(weightAmt)){
 				case 1: case 2: 
 					shipRate=1.10;	
