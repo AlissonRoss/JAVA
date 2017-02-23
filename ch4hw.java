@@ -7,7 +7,7 @@ public class ch4hw {
 	
 	public static void main(String [] args) {
 		
-		int count=1;
+		int count=0;
 		double countRooms=0;
 		double countOccRoom=0;
 		double rateOcc;
@@ -18,7 +18,7 @@ public class ch4hw {
 		
 		//While Loop to check if the Count is less than inputFloor
 		
-		while (count < (floorAmt+1)) {
+		while (count < floorAmt) {
 			
 			//Loop to display error message if invalid number is inputed
 			
