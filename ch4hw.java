@@ -19,7 +19,7 @@ public class ch4hw {
 		//While Loop to check if the Count is less than inputFloor
 		
 		while (count < floorAmt) {
-			
+			count +=1;
 			//Loop to display error message if invalid number is inputed
 			
 			if (floorAmt >= 1) {
@@ -68,7 +68,7 @@ public class ch4hw {
 				
 				}
 			
-			count ++;
+			
 			
 			
 			}
@@ -78,7 +78,7 @@ public class ch4hw {
 		JOptionPane.showMessageDialog(null, "\nTotal Floors:\t"+count+
 				"\nTotal Rooms:\t"+countRooms+
 				"\nTotal Occupied Rooms:\t"+countOccRoom+
-				"\n Total Vacant Rooms: \t"+vacantRoom+
+				"\nTotal Vacant Rooms: \t"+vacantRoom+
 				"\nOccupancy Average: \t"+rateOcc+"%");
 		
 	}
