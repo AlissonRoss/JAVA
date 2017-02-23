@@ -68,9 +68,6 @@ public class ch4hw {
 				
 				}
 			
-			
-			
-			
 			}
 		rateOcc=countOccRoom/countRooms;
 		vacantRoom=countRooms-countOccRoom;
