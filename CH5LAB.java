@@ -116,10 +116,12 @@ public static void main(String [] main){
 		}
 		//Display
 		
-		if (bonus == 0)
+		if (bonus == 0){
 			System.out.println("\n Oops! You lost your bet!");
-		else
+			{
+		else{
 			System.out.println("\n Good Job! You got $"+bonus+"back!");
+		}
 		
 	}
 	
