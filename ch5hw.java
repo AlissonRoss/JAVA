@@ -50,16 +50,16 @@ public class ch5hw {
 	 * @return
 	 */
 	public static String inChoice(){
-		
-		String inputPlayer=JOptionPane.showInputDialog("Enter your selection:"
-				+"\n Rock"
-				+"\n Paper"
-				+"\n Scissors");
-			inputPlayer=inputPlayer.toLowerCase();
 			
-		//If Statement to check Input Validation	
+		String inputPlayer;
+		//Do-While Statement to check Input Validation	
 		do{
-			
+			inputPlayer=JOptionPane.showInputDialog("Enter your selection:"
+					+"\n Rock"
+					+"\n Paper"
+					+"\n Scissors");
+				inputPlayer=inputPlayer.toLowerCase();
+				
 		}while ((!inputPlayer.equals("rock") && !inputPlayer.equals("paper")
 				&& !inputPlayer.equals("scissors")));
 		
