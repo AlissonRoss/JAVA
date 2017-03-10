@@ -58,12 +58,10 @@ public class ch5hw {
 			inputPlayer=inputPlayer.toLowerCase();
 			
 		//If Statement to check Input Validation	
-		while (!inputPlayer.equals("rock") && !inputPlayer.equals("paper")
-				&& !inputPlayer.equals("scissors")){
-			JOptionPane.showMessageDialog(null, "Invalid Input: "
-					+ "\n Terminating Program.");
-			System.exit(0);
-		}
+		do{
+			
+		}while ((!inputPlayer.equals("rock") && !inputPlayer.equals("paper")
+				&& !inputPlayer.equals("scissors")));
 		
 		return inputPlayer;
 	}
@@ -104,7 +102,6 @@ public class ch5hw {
 			
 			JOptionPane.showMessageDialog(null, "\nYou Lost!");
 			return false;
-		}
-		
+		}	
 	}
 }
