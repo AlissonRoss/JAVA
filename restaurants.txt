@@ -1,0 +1,4 @@
+Hot Tamale	Cuisine	5
+ali	spaghetti	10
+hello	world	20
+hello	cookie	50
