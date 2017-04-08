@@ -22,10 +22,10 @@ public class array {
 			array[count]=val;
 			
 			}
-		//For loop to iterate through the array with the values
-		for(int count=0;count < array.length;count++){
+		//Enhanced-For loop to iterate through the array and print
+		//the values in such current position of the array
+		for(int arrayVal : array){
 		
-			int arrayVal = array[count];
 			//If statement to check if the int values inside of the array are
 			//positive values and if so, it'll print that value
 			if (arrayVal >= 0){
