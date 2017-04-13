@@ -1,152 +1,113 @@
-import java.util.Scanner;
-
-import java.util.*;
-public class CH5LAB {
-/** Alisson Leiva
- * This Program simulates a slot machine. 
- * User puts money into the machine 
- * And the Machine generates three words(to indicate images)
- * the Machine will calculate and display the reward
- * Game will be repeated until the user says no */
-	
-public static void main(String [] main){
-	
-	char answer;
-	double bet;
-	String word1, word2, word3;
-	
-	do {
+package fishing;
+import javax.swing.*;
+/**
+ * 
+ * @author Alisson Leiva Salazar
+ *
+ */
+public class fishingMain {
+	//Main Method
+	public static void main(String [] args){
 		
-	// get the bet
-		//Bet is a BLOCK variable
-		bet= getBet();
-	//select the three words
-		word1=selectWord();
-		word2=selectWord();
-		word3=selectWord();
+		//Boolean set to False until the condition is true,
+		//the do-while loop will iterate again
+		boolean play = false;
 		
-		System.out.println(word1+" "+ word2+ " "+word3);
-	//play
-		play(bet, word1, word2, word3);
-	//ask if repeat
-		answer= again();
+		//Tracks Rounds
+		int round=0;
 		
+		//Tracks Total
+		int total=0;
 		
-	} 
-	while(answer == 'y');
-	
+		//Main Screen
+		JOptionPane.showMessageDialog(null,"Fantastic Fishing Game!");
+		//Iterates do-while loop if boolean is true
+		do{
+			
+			//Makes a new Child from the Die Parent class
+			Die newDice = new Die(6);
+			
+			//Referencing Roll for pricesSwitch and to 
+			//get String Data for output of prices
+			
+			int roll=newDice.getValue();
+			
+			//Retrieved String Data from the Dice roll amount
+			//and the Switch statement
+			String price=pricesSwitch(roll);
+			
+			//Adds the roll amount to the total value
+			total+=roll;
+			
+			//Output of Rounds, the Dice Value and the Price corresponding to
+			//such price
+			JOptionPane.showMessageDialog(null, "Dice Roll!\n"
+					+ "Round # "
+					+(round+=1)
+					+":\n"
+					+newDice.getValue()
+					+"\n"
+					+price);
+			
+		}while(tryAgain());
+		
+		//Prints Total when condition of the do-while is False
+		JOptionPane.showMessageDialog(null, "Total Score:\n"
+				+total);
+		
 	}
-	/** This method gets the amount of bet for the game
-	 * @return the amount of debt
-	 
-	 */
-	public static double getBet(){
-		Scanner myInput= new Scanner(System.in);
+	//Asks the user if they want to play again
+	//returns Boolean Data type true if 
+	//do-while loop is no longer meeting the condition
+	public static boolean tryAgain(){	
+				
+		String input;
+		do{
+			input=JOptionPane.showInputDialog("Would you like to play again?\n"
+					+"yes/no");
+			input=input.toLowerCase();
+		//do while input is not equal to yes or no inputs	
+		} while( !input.equals("yes") && !input.equals("no") );
 		
-		System.out.print("Enter the amount of bet: ");
-		
-		double bet = myInput.nextDouble();
-		
-		while (bet <=0 || bet > 100)
-		{
-			System.out.println("The bet cannot be over $100");
+		if (input.equals("yes") ){
+			return true;
 		}
-			return bet;
-		
+		else{
+			return false;
+		}
 		
 	}
-	/** This Method returns the word selected
-	 @return the word selected
-	 */
-	public static String selectWord(){
-		String word;
-		Random rand= new Random();
+	
+	public static String pricesSwitch(int roll){
 		
-		//Generate a random Integer from 0 to 5
-		
-		int number = rand.nextInt(6);
-		
-		switch (number)
-		{
+	//String Data Type price will be returned
+	String price;
+	//The switch will be using the Dice roll int value to
+	//retrieve the corresponding String Data for Output
+	switch (roll){
 		case 0:
-			word= "Cherry";
+			price= "Old Boot";
 			break;
 		case 1:
-			word="Orange";
+			price= "Stinky Eel";
 			break;
 		case 2:
-			word="Plum";
+			price= "Tiny Fishie";
 			break;
 		case 3:
-			word= "Melon";
+			price= "Medium Eel";
 			break;
 		case 4:
-			word ="Bar";
+			price= "Biggie Fish";
+			break;
+		case 5:
+			price= "Behemoth Fish";
 			break;
 		default:
-			word="Apple";
+			price= "Amazing Bass";
 			break;
 		}
-		
-		
-		return word;
+	return price;
 	}
 	
-	/**
-	 * This method calculates and displays the reward information
-	 * @param bet the amount of bet
-	 * @param w1 the first word
-	 * @param w2 the second word
-	 * @param w3 the third word
-	 */
-	public static void play(double bet, String w1, String w2, String w3){
-		
-		double bonus;
-		
-		if (w1.equals(w2) && w2.equals(w3)){
-			bonus =bet*3;
-			
-		}
-		else if (w1.equals(w2) || w1.equals(w3) || w2.equals(w3)){
-			bonus = bet * 2;
-					
-		}
-		else {
-			bonus=0;
-		}
-		//Display
-		
-		if (bonus == 0){
-			System.out.println("\n Oops! You lost your bet!");
-			{
-		else{
-			System.out.println("\n Good Job! You got $"+bonus+"back!");
-		}
-		
-	}
-	
-	/**
-	 * This method asks the user if they want to repeat
-	 * @return 
-	 @return the response
-	 */
-	public static char again(){
-		Scanner myInput = new Scanner(System.in);
-		char response;
-		
-		System.out.print("\n Want to play again? \n (Y for yes/ N for no) ?:");
-		
-		response = myInput.nextLine().toLowerCase().charAt(0);
-		
-		//What if the response is not, y, or n
-		
-		while (response != 'y' && response != 'n'){
-			System.out.println("The response can only be Y/y or N/n.");
-			System.out.print("\n Want to play again? \n (Y for yes/ N for no) ?:");
-			
-			response = myInput.nextLine().toLowerCase().charAt(0);
-		}
-		return response;
-		
-	}
 }
