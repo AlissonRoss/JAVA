@@ -1,13 +1,5 @@
 package fishing;
 import javax.swing.*;
-
-/**
- * For this assignment, you will write a program that simulates a fishing game. 
- * In this game, a six-sided die is rolled to determine what he user has caught. 
- * Each possible item is worth a number of fishing points. 
- * The points will remain hidden until the user is finished fishing, and then a message 
- * is displayed congratulating the user, depending on the number of fishing points gained.
- */
 /**
  * 
  * @author Alisson Leiva Salazar
@@ -28,7 +20,7 @@ public class fishingMain {
 		int total=0;
 		
 		//Main Screen
-		JOptionPane.showMessageDialog(null,"Fishing Game!");
+		JOptionPane.showMessageDialog(null,"Fantastic Fishing Game!");
 		//Iterates do-while loop if boolean is true
 		do{
 			
@@ -49,7 +41,7 @@ public class fishingMain {
 			
 			//Output of Rounds, the Dice Value and the Price corresponding to
 			//such price
-			JOptionPane.showMessageDialog(null, "Dice Roll!:\n"
+			JOptionPane.showMessageDialog(null, "Dice Roll!\n"
 					+ "Round # "
 					+(round+=1)
 					+":\n"
@@ -59,6 +51,7 @@ public class fishingMain {
 			
 		}while(tryAgain());
 		
+		//Prints Total when condition of the do-while is False
 		JOptionPane.showMessageDialog(null, "Total Score:\n"
 				+total);
 		
@@ -87,10 +80,10 @@ public class fishingMain {
 	
 	public static String pricesSwitch(int roll){
 		
-	//String price will be returned
+	//String Data Type price will be returned
 	String price;
-	//The switch will be using the Dice roll value to
-	//retrieve the corresponding String Output
+	//The switch will be using the Dice roll int value to
+	//retrieve the corresponding String Data for Output
 	switch (roll){
 		case 0:
 			price= "Old Boot";
