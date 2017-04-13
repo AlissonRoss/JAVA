@@ -16,25 +16,39 @@ import javax.swing.*;
 public class fishingMain {
 	//Main Method
 	public static void main(String [] args){
+		
 		//Boolean set to False until the condition is true,
 		//the do-while loop will iterate again
 		boolean play = false;
 		
+		//Tracks Rounds
 		int round=0;
+		
+		//Tracks Total
 		int total=0;
 		
-	
-		
+		//Main Screen
 		JOptionPane.showMessageDialog(null,"Fishing Game!");
-		
+		//Iterates do-while loop if boolean is true
 		do{
 			
-			//Iterates if bool=true
+			//Makes a new Child from the Die Parent class
 			Die newDice = new Die(6);
+			
 			//Referencing Roll for pricesSwitch and to 
-			//get String Data
+			//get String Data for output of prices
+			
 			int roll=newDice.getValue();
+			
+			//Retrieved String Data from the Dice roll amount
+			//and the Switch statement
 			String price=pricesSwitch(roll);
+			
+			//Adds the roll amount to the total value
+			total+=roll;
+			
+			//Output of Rounds, the Dice Value and the Price corresponding to
+			//such price
 			JOptionPane.showMessageDialog(null, "Dice Roll!:\n"
 					+ "Round # "
 					+(round+=1)
@@ -43,8 +57,10 @@ public class fishingMain {
 					+"\n"
 					+price);
 			
-			
 		}while(tryAgain());
+		
+		JOptionPane.showMessageDialog(null, "Total Score:\n"
+				+total);
 		
 	}
 	//Asks the user if they want to play again
@@ -70,7 +86,11 @@ public class fishingMain {
 	}
 	
 	public static String pricesSwitch(int roll){
+		
+	//String price will be returned
 	String price;
+	//The switch will be using the Dice roll value to
+	//retrieve the corresponding String Output
 	switch (roll){
 		case 0:
 			price= "Old Boot";
