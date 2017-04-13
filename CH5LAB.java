@@ -50,6 +50,7 @@ public static void main(String [] main){
 		while (bet <=0 || bet > 100)
 		{
 			System.out.println("The bet cannot be over $100");
+			System.exit(0);
 		}
 			return bet;
 		
