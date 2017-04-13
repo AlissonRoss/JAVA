@@ -118,9 +118,9 @@ public static void main(String [] main){
 		
 		if (bonus == 0){
 			System.out.println("\n Oops! You lost your bet!");
-			{
+		}
 		else{
-			System.out.println("\n Good Job! You got $"+bonus+"back!");
+			System.out.println("\n Good Job! You got $"+bonus+" back!");
 		}
 		
 	}
