@@ -46,6 +46,21 @@ public class Month {
 		
 		this.monthNumber = monthNumber;
 	}
+	
+	public Month(String stringData){
+		String[] monthNames= {"January","February","March","April",
+				"May","June","July","August","September","October",
+				"November","December"		
+		};
+		
+		for (int count = 0;count < monthNames.length;count++){
+			
+			if(monthNames[count]==stringData){
+				monthNumber= count+1;
+			}
+				
+		}
+	}
 
 	//toString Method : Converts integer value of monthNumber
 	//to a String Data type named stringData

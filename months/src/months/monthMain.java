@@ -10,12 +10,12 @@ public class monthMain {
 	public static void main(String[] args){
 		
 		Month month1= new Month(1);
-		Month month2= new Month(6);
+		Month month2= new Month("June");
 	
 		JOptionPane.showMessageDialog(null,"Month: "
 				+month1.getMonthName()
 				+"\nMonth: "
-				+month2.getMonthName());
+				+month2.getMonthNumber());
 			
 	}
 
