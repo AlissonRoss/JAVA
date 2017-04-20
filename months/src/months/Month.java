@@ -1,12 +1,13 @@
+/*
+ * Alisson Leiva Salazar
+ */
 package months;
 
 public class Month {
 	//Predefined private integer for the monthNumber
 	private int monthNumber=0;
 
-	
-	
-	//Accessor/Getter
+	//ACCESSORS/GETTERS
 	public int getMonthNumber(){
 		
 		return this.monthNumber;	
@@ -23,30 +24,35 @@ public class Month {
 				"May","June","July","August","September","October",
 				"November","December"		
 		};
+		//returns the month name as String, while the position is minus 1
 		return monthNames[monthNumber -1];
 					
 	}
 	
 
-	//Mutator/Setter
+	//MUTATORS/SETTERS
 	public void setMonthNumber(int month){
 		//SETS inputNum to a Private, local scoped variable that is only available inside of the Month Class
 		monthNumber=month;	
 	}
 
 
-	//Constructors
+	//CONSTRUCTORS 
 	
-	//no Argument constructor that sets monthNumber to 1 
+	//1st) no Argument constructor that sets monthNumber to 1 
 	public Month(){
 		monthNumber=1;
 	}
-	
+	//2nd)
 	public Month(int monthNumber) {
 		
 		this.monthNumber = monthNumber;
 	}
 	
+	//3rd) Constructor that will take in stringData into the Month.java
+	//It checks through a for loop if the monthName in the count (position)
+	//corresponds to the stringData from the main method
+	//it'll then assign monthnumber to count+1
 	public Month(String stringData){
 		String[] monthNames= {"January","February","March","April",
 				"May","June","July","August","September","October",
