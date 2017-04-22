@@ -72,11 +72,11 @@ public class DriverExam {
 	//integer based array Method to return which question numbers
 	//were missed
 	public int[] questionsMissed(){
-		//Array that will hold the questions missed
-		int[] missArray= new int [20];
+	
 		//Incorrect Answers
 		int incorrectAns= 20-correctAns;
-		
+		//Array that will hold the questions missed
+		int[] missArray= new int [incorrectAns];
 		//For Loop to iterate through the correctArray and checks
 		//through a if loop which answer numbers were missed
 		for(int count=0; count < correctArray.length; count++){
