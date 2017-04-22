@@ -43,7 +43,7 @@ public class mainExam {
 					+"\nTotal Incorrect: "
 					+exam.totalIncorrect()
 					+"\nMissed Questions: "
-					+exam.questionsMissed());
+					+Arrays.toString(exam.questionsMissed()));
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "The Student Failed"
@@ -54,8 +54,8 @@ public class mainExam {
 					+exam.totalIncorrect()
 					+"\nMissed Questions: "
 					+Arrays.toString(exam.questionsMissed()));
-		}
-	
+					}
+		
 	}
 
 }
