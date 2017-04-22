@@ -1,3 +1,6 @@
+/**
+ * Alisson Leiva Salazar
+ */
 package ch7Assign;
 
 public class DriverExam {
@@ -41,7 +44,7 @@ public class DriverExam {
 		//Will iterate through correctArray to check if the elements from
 		//inputArray correspond to one another
 		for (int count=0;count < correctArray.length; count++){
-			if(correctArray[count]==inputArray[count]){
+			if(correctArray[count].equals(inputArray[count])){
 				
 				correctAns++;
 			}
@@ -74,18 +77,19 @@ public class DriverExam {
 	//integer based array Method to return which question numbers
 	//were missed
 	public int[] questionsMissed(){
-		int count1=0;
+		
 		//Array that will hold the questions missed
 		int[] missArray= new int [this.totalIncorrect()];
 		//For Loop to iterate through the correctArray and checks
 		//through a if loop which answer numbers were missed
-		for(int count=0; count < correctArray.length; count++){
+		for(int count1=0, count2=0; count1 < correctArray.length; count1++){
 			//If the correctArray at the same position as inputArray's
 			//does not match or correspond to one another, it will add
 			//that position plus 1 to the missArray.
-			if (correctArray[count]!=inputArray[count]){
-				missArray[count1]=count+1;
-				count1=count1+1;
+			if (!correctArray[count1].equals(inputArray[count1])){
+				
+				missArray[count2]=count1+1;
+				count2++;	
 			}
 		}
 		
