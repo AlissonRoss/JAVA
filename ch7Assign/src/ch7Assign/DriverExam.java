@@ -7,6 +7,7 @@ public class DriverExam {
 	
 	//Total Correct answers that the user gained
 	private int correctAns;
+	
 		
 	//Array with all the correct answers
 	private String[] correctArray= {
@@ -40,10 +41,11 @@ public class DriverExam {
 		//Will iterate through correctArray to check if the elements from
 		//inputArray correspond to one another
 		for (int count=0;count < correctArray.length; count++){
-			
 			if(correctArray[count]==inputArray[count]){
+				
 				correctAns++;
 			}
+			
 		}
 		//returns Boolean whether the user passed
 		//or failed the exam; the minimum to pass is 15
@@ -66,17 +68,15 @@ public class DriverExam {
 	public int totalIncorrect(){
 		//Returns the correctAns minus the total possible
 		//points
-		return (20 - correctAns);
+		return (20-correctAns);
 		
 	}
 	//integer based array Method to return which question numbers
 	//were missed
 	public int[] questionsMissed(){
-	
-		//Incorrect Answers
-		int incorrectAns= 20-correctAns;
+		int count1=0;
 		//Array that will hold the questions missed
-		int[] missArray= new int [incorrectAns];
+		int[] missArray= new int [this.totalIncorrect()];
 		//For Loop to iterate through the correctArray and checks
 		//through a if loop which answer numbers were missed
 		for(int count=0; count < correctArray.length; count++){
@@ -84,7 +84,8 @@ public class DriverExam {
 			//does not match or correspond to one another, it will add
 			//that position plus 1 to the missArray.
 			if (correctArray[count]!=inputArray[count]){
-				missArray[count]=count+1;
+				missArray[count1]=count+1;
+				count1=count1+1;
 			}
 		}
 		
