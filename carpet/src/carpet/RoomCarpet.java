@@ -6,14 +6,14 @@ package carpet;
 public class RoomCarpet {
 	//PRIVATES
 	private RoomDimension size;
-	private double carpetCost;
+	private static double carpetCost;
 	
 	//GETTERS/ACCESSORS
 	public RoomDimension getSize(){
 		return this.size;
 	}
-	public double getCarpetCost(){
-		return this.carpetCost;
+	public static double getCarpetCost(){
+		return carpetCost;
 	}
 	
 	//CONSTRUCTORS
