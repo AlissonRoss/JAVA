@@ -15,10 +15,15 @@ public class mainCarpet {
 		String width=JOptionPane.showInputDialog("Enter the width: ");
 		//Parse String Input to Double Data Type
 		double widthIn=Double.parseDouble(width);
+		String cost=JOptionPane.showInputDialog("Enter cost: ");
+		double costIn=Double.parseDouble(cost);
 		
-		RoomDimension room=new RoomDimension(lengthIn,widthIn);
+		RoomDimension roomDim=new RoomDimension(lengthIn,widthIn);
+		RoomCarpet roomCar=new RoomCarpet(roomDim, costIn);
 		
-		JOptionPane.showMessageDialog(null,room.toString());
+		JOptionPane.showMessageDialog(null,roomDim.toString()
+				+"\n"
+				+roomCar.toString());
 		
 		
 	}

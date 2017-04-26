@@ -45,6 +45,10 @@ public class RoomDimension {
 		
 		
 	}
-	
+	public String toString(){
+		String output= "Area: "
+				+this.getArea();
+		return output;
+	}
 
 }

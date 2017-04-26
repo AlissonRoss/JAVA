@@ -34,7 +34,7 @@ public class RoomCarpet {
 	}
 	
 	public String toString(){
-		String output= "Total: "
+		String output= "Total: $"
 				+this.getTotalCost();
 		return output;
 	}
