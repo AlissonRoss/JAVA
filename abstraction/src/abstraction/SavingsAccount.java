@@ -74,15 +74,20 @@ public class SavingsAccount extends BankAccount {
 			
 	}
 	
+	
 	@Override
 	public double monthlyProcess(){
-		
+		//If the number of Deposits or Withdrawals is 
+		//greater than four
 		if(numDep > 4 || numWit > 4){
-			monthServ+=Math.max(0.0,(numDep-4)*1);
-			monthServ+=Math.max(0.0,(numWit-4)*1);
+			//Then add to monthServ the number of deposits or withdrawals
+			//minus 4 to take away the 4 that don't count for the calculation
+			//and multiply the remainder by 1
+			setMonthServ(getMonthServ() + Math.max(0.0,(numDep-4)*1));
+			setMonthServ(getMonthServ() + Math.max(0.0,(numWit-4)*1));
 		}
 		
-		return monthServ;
+		return getMonthServ();
 			
 	}
 	

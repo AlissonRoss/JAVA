@@ -5,8 +5,8 @@ package abstraction;
 
 public abstract class BankAccount {
 	private double balance;
-	protected double annInt;
-	protected double monthServ;
+	private double annInt;
+	private double monthServ;
 	
 	
 	//GETTERS/ACCESSORS
