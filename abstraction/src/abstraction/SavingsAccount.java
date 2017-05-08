@@ -20,9 +20,9 @@ public class SavingsAccount extends BankAccount {
 	//Constructor
 	
 	public SavingsAccount(){
-		numDep=0;
-		numWit=0;
-		boolActive=false;
+		this.numDep=0;
+		this.numWit=0;
+		this.boolActive=false;
 	}
 	
 	public SavingsAccount(double d, double w, boolean f,
@@ -77,16 +77,20 @@ public class SavingsAccount extends BankAccount {
 	
 	@Override
 	public double monthlyProcess(){
+		
+		setMonthServ(10.0);
+		
 		//If the number of Deposits or Withdrawals is 
 		//greater than four
-		if(numDep > 4 || numWit > 4){
+		if(numDep > 4 || numWit >4 ){
 			//Then add to monthServ the number of deposits or withdrawals
 			//minus 4 to take away the 4 that don't count for the calculation
 			//and multiply the remainder by 1
 			setMonthServ(getMonthServ() + Math.max(0.0,(numDep-4)*1));
 			setMonthServ(getMonthServ() + Math.max(0.0,(numWit-4)*1));
 		}
-		
+		numDep=0.0;
+		numWit=0.0;
 		return getMonthServ();
 			
 	}
