@@ -51,6 +51,16 @@ public class FileEncryption {
 				//Reads primitive types
 				//Pass the (fileStream) as the argument to the following constructor
 				dataStream= new DataInputStream(fileStream);
+				
+				while(dataStream.available() > 0) {
+         
+				    //read character
+				    char c = dataStream.readChar();
+
+				    //print
+				    System.out.print(c);
+				}
+				
 				break;
 			}
 			
