@@ -5,9 +5,6 @@ import javax.swing.JOptionPane;
  */
 public class partitionQuick {
 	
-	
-	private static int leftSubList;
-	private static int endOfLeftList;
 
 	public static void main(String[] args) {
 		
@@ -35,11 +32,11 @@ public class partitionQuick {
 	}
 	
 	//Partition Method
-	public static void partitionQuickSort(int[] array, int startIndex, int endIndex){
+	public static int partitionQuickSort(int[] array, int startIndex, int endIndex){
 			
 	
 		
-		//I take the pivot value as the midpoint
+		//I take the first element of the array as the pivotVal
 		int pivotVal=array[startIndex];
 		int endLeftSubList=startIndex;
 		
@@ -55,25 +52,22 @@ public class partitionQuick {
 				//swapping
 				//swap holds the element
 				int swap;
-				//temporary var swap holds the element at array[startIndex]
-				swap=array[startIndex]; 
-				//array[endIndex] is swapped with array[startIndex]
-				array[startIndex]=array[endLeftSubList];
+				//temporary var swap holds the element at array[loop]
+				swap=array[loop]; 
+				//array[endLeftSubList] is swapped with array[loop]
+				array[loop]=array[endLeftSubList];
 				array[endLeftSubList]=swap;
-				
-				
+							
 			}
-			//if(array[endIndex] > pivotVal){
-				//move element to the left.
-				//endIndex--;	
-					
-			//}
-		
-		
-			
+				
 		}
 		
-		
+		//swap pivot value into endLeftSubList
+		array[startIndex] = array[endLeftSubList];
+        array[endLeftSubList] = pivotVal;
+        
+        return array[endLeftSubList];
+			
 	}
 	
 
