@@ -23,11 +23,12 @@ public class CardPlayer {
 	 }
 
 	 public void showCards() {
+		 String hand = "";
 		 for (Card card : handList) {
 			 
-			 JOptionPane.showMessageDialog(null, "Player's hand: "+card);
+			 hand += card + "\n";
 		 }
-	   
+		 JOptionPane.showMessageDialog(null, "Player's hand: \n"+hand);
 	 }
 
 }
