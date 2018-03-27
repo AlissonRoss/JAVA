@@ -11,11 +11,11 @@ import javax.swing.JOptionPane;
 public class setToken {
 
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		uniqueWord();
 		
 	}
-	private static void uniqueWord() throws IOException {
+	private static void uniqueWord(){
 			
 		try {
 			// input stream for reading data from a file
