@@ -54,6 +54,9 @@ public class setToken {
 					
 					+ workingDirectory);		
 		}	
+		catch (IOException e) {
+			e.printStackTrace();
+	    }
 		
 				
 	}
