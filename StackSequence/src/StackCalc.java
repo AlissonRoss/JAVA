@@ -50,27 +50,29 @@ public class StackCalc {
 				+Arrays.toString(stackOperator.toArray())
 				+"\nChars inside Operand Stack: "
 				+Arrays.toString(stackOperand.toArray())
-				+"\nResult: ");
+				+"\nResult: "
+				+"");
 				
 		
 	}
-	public Stack<Integer> intValue(Stack<Character> stackOperand, Stack<Character> stackOperator) {
-		Stack<Integer> tempStack= new Stack<>();
+	public int intValue(Stack<Character> stackOperand, Stack<Character> stackOperator) {
+		//Stack<Integer> tempStack= new Stack<>();
+		int tempStack = 0;
 		//while stackOperand isnt empty, check the operator and then perform the operation on the 
 		//two elements within the stackOperand
 		while(!stackOperand.isEmpty()) {
 			int value = stackOperator.pop();
 			switch (value){
 		    	case '/': 
-		    		return  tempStack.push(stackOperand.pop() + stackOperand.pop());;
+		    		return  tempStack+=(stackOperand.pop() / stackOperand.pop());
 		        case '*': 
-		            return ;
+		            return tempStack+=(stackOperand.pop() * stackOperand.pop());
 		        case '+': 
-		            return ;
+		            return tempStack+=(stackOperand.pop() + stackOperand.pop());
 		        case '-': 
-		            return ;
+		            return tempStack+=(stackOperand.pop() - stackOperand.pop());
 		        default: 
-		            return ;
+		            return 0;
 				}
 		}
 		return tempStack;
