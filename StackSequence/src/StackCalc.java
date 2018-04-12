@@ -29,9 +29,11 @@ public class StackCalc {
 		
 		Stack<Character> stackOperand= new Stack<>();
 		
+		
 		//for loop to iterate through the mathematical expression
 		for(int i = 0;i < expression.length();i++) {
 			Character temp = expression.charAt(i);
+			
 			
 			//nested if statement- if the expression contains any of the string elements
 			//within the operatorArray, .push into the StackOperator
@@ -39,11 +41,24 @@ public class StackCalc {
 				stackOperator.push(temp);
 				
 			}
+			
 			//else, .push to stackOperand if not null
 			else {
 				stackOperand.push(temp);
+				
+				if(stackOperand.peek()=='*') {
+					stackOperand.push((char) (1.0/stackOperand.pop()*stackOperand.pop()));
+					stackOperand.pop();
+					
+				}
+				else if(stackOperand.peek() == '/') {
+					stackOperand.push((char) (stackOperand.pop()/stackOperand.pop()));
+					stackOperand.pop();
+					
+				}		
+		
 			}
-	
+			
 		}
 		
 		JOptionPane.showMessageDialog(null,"Chars inside Operator Stack: "
@@ -55,8 +70,7 @@ public class StackCalc {
 				
 		
 	}
-	public int intValue(Stack<Character> stackOperand, Stack<Character> stackOperator) {
-		//Stack<Integer> tempStack= new Stack<>();
+	public static int intValue(Stack<Character> stackOperand, Stack<Character> stackOperator) {
 		int tempStack = 0;
 		//while stackOperand isnt empty, check the operator and then perform the operation on the 
 		//two elements within the stackOperand
@@ -64,16 +78,14 @@ public class StackCalc {
 			int value = stackOperator.pop();
 			switch (value){
 		    	case '/': 
-		    		return  tempStack+=(stackOperand.pop() / stackOperand.pop());
+		    		tempStack+=(stackOperand.pop() / stackOperand.pop());
 		        case '*': 
-		            return tempStack+=(stackOperand.pop() * stackOperand.pop());
+		            tempStack+=(stackOperand.pop() * stackOperand.pop());
 		        case '+': 
-		            return tempStack+=(stackOperand.pop() + stackOperand.pop());
+		            tempStack+=(stackOperand.pop() + stackOperand.pop());
 		        case '-': 
-		            return tempStack+=(stackOperand.pop() - stackOperand.pop());
-		        default: 
-		            return 0;
-				}
+		            tempStack+=(stackOperand.pop() - stackOperand.pop());
+			}
 		}
 		return tempStack;
 	}
