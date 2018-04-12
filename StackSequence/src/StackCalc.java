@@ -25,14 +25,14 @@ public class StackCalc {
 		String expression="(-5)*4-(3-7)*5/2";
 	
 		
-		Stack<Character> stackOperator= new Stack<>();
+		Stack<Double> stackOperator= new Stack<>();
 		
-		Stack<Character> stackOperand= new Stack<>();
+		Stack<Double> stackOperand= new Stack<>();
 		
 		
 		//for loop to iterate through the mathematical expression
 		for(int i = 0;i < expression.length();i++) {
-			Character temp = expression.charAt(i);
+			Double temp = (double) expression.charAt(i);
 			
 			
 			//nested if statement- if the expression contains any of the string elements
@@ -47,12 +47,12 @@ public class StackCalc {
 				stackOperand.push(temp);
 				
 				if(stackOperand.peek()=='*') {
-					stackOperand.push((char) (1.0/stackOperand.pop()*stackOperand.pop()));
+					stackOperand.push((double) (stackOperand.pop()*stackOperand.pop()));
 					stackOperand.pop();
 					
 				}
 				else if(stackOperand.peek() == '/') {
-					stackOperand.push((char) (stackOperand.pop()/stackOperand.pop()));
+					stackOperand.push((double) (1.0/stackOperand.pop()*stackOperand.pop()));;
 					stackOperand.pop();
 					
 				}		
