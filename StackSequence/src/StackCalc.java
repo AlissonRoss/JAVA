@@ -22,7 +22,7 @@ Hints:
  */
 public class StackCalc {
 	public static void main(String[] args) {
-		String expression="(-5)*4-(3-7)*5/2";
+		String expression = '(' + "(-5)*4-(3-7)*5/2.5" + ')';
 	
 		
 		Stack<Character> stackOperator= new Stack<>();
@@ -46,16 +46,17 @@ public class StackCalc {
 			else {
 				stackOperand.push((double) temp);
 				
-				if(stackOperand.peek()=='*') {
-					stackOperand.push((double) (stackOperand.pop()*stackOperand.pop()));
-					stackOperand.pop();
-					
+				if (stackOperator.peek() == '*') {
+				    stackOperand.push(stackOperand.pop()*stackOperand.pop());
+				    stackOperator.pop();
 				}
-				else if(stackOperand.peek() == '/') {
-					stackOperand.push((double) (1.0/stackOperand.pop()*stackOperand.pop()));;
-					stackOperand.pop();
+				else if (stackOperator.peek() == '/') {
+				    stackOperand.push(1.0/stackOperand.pop()*stackOperand.pop());
+				    stackOperator.pop();
+				}
+				//else if(stackOperator.peek()=='('&& stackOperator.peek()==')') {
 					
-				}		
+				//}
 		
 			}
 			
