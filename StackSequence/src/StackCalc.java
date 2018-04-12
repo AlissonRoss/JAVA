@@ -32,7 +32,7 @@ public class StackCalc {
 		
 		//for loop to iterate through the mathematical expression
 		for(int i = 0;i < expression.length();i++) {
-			Double temp = (double) expression.charAt(i);
+			char temp = expression.charAt(i);
 			
 			
 			//nested if statement- if the expression contains any of the string elements
@@ -44,7 +44,7 @@ public class StackCalc {
 			
 			//else, .push to stackOperand if not null
 			else {
-				stackOperand.push(temp);
+				stackOperand.push((double) temp);
 				
 				if(stackOperand.peek()=='*') {
 					stackOperand.push((double) (stackOperand.pop()*stackOperand.pop()));
