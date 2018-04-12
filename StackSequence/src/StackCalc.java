@@ -25,7 +25,7 @@ public class StackCalc {
 		String expression="(-5)*4-(3-7)*5/2";
 	
 		
-		Stack<Double> stackOperator= new Stack<>();
+		Stack<Character> stackOperator= new Stack<>();
 		
 		Stack<Double> stackOperand= new Stack<>();
 		
