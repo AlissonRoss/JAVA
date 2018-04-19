@@ -115,7 +115,7 @@ public class ConnectFourLogic {
 		// '/' win
 		int matches = 1;
 	    for (int r = row + 1; r < rowNum; ++r) {
-	      if (board[r][col] != piece)
+	      if (board[col][r] != piece)
 	        break;
 	      ++matches;
 	    }
@@ -127,14 +127,14 @@ public class ConnectFourLogic {
 
 	    //scan left
 	    for (int c = col - 1; c >= 0; --c) {
-	      if (board[row][c] != piece)
+	      if (board[c][row] != piece)
 	        break;
 	      ++matches;
 	    }
 
 	    //scan right
 	    for (int c = col + 1; c < colNum; ++c) {
-	      if (board[row][c] != piece)
+	      if (board[c][row] != piece)
 	        break;
 	      ++matches;
 	    }
@@ -149,7 +149,7 @@ public class ConnectFourLogic {
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row + (col - c);
 
-	      if (r >= rowNum || board[r][c] != piece)
+	      if (r >= rowNum || board[c][r] != piece)
 	        break;
 	      ++matches;
 	    }
@@ -158,7 +158,7 @@ public class ConnectFourLogic {
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row + (col - c);
 
-	      if (r < 0 || board[r][c] != piece)
+	      if (r < 0 || board[c][r] != piece)
 	        break;
 	      ++matches;
 	    }
@@ -174,7 +174,7 @@ public class ConnectFourLogic {
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row - (col - c);
 
-	      if (r < 0 || board[r][c] != piece)
+	      if (r < 0 || board[c][r] != piece)
 	        break;
 	      ++matches;
 	    }
@@ -183,7 +183,7 @@ public class ConnectFourLogic {
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row - (col - c);
 
-	      if (r >= rowNum || board[r][c] != piece)
+	      if (r >= rowNum || board[c][r] != piece)
 	        break;
 	      ++matches;
 	    }
