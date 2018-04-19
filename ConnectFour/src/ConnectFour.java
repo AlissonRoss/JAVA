@@ -62,7 +62,7 @@ public class ConnectFour {
 	    while (true) {
 	        String line = keyboard.nextLine();
 	        char first = (line.length() == 0) ? ' ' : line.charAt(0);
-	        if (first >= '1' && first <= '7') {
+	        if (first >= '0' && first <= '6') {
 	            return first - '0';
 	            }
 	
