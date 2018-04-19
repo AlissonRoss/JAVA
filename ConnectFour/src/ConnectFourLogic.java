@@ -1,5 +1,8 @@
-import java.util.Random;
+/*
+ * Alisson Leiva Salazar
+ */
 
+import java.util.Random;
 
 //method boolean -call it with the most recent move and tells if that piece was in a winning pattern
 //initializes board
@@ -93,34 +96,40 @@ public class ConnectFourLogic {
 				break;
 			}
 		}
-		
-
+	
 		char piece = board[col][row];
-		
-		
-		//test for vertical matches
+				
+		//checks for vertical matches
 	
 		int matches = 1;
 	    for (int r = row + 1; r < rowNum; ++r) {
-	      if (board[col][r] != piece)
+	    	
+	      if (board[col][r] != piece) {
+	    	  
 	        break;
+	       }
+	      
 	      ++matches;
 	    }
 	    if (matches >= 4)
 	      return true;
 
-	    //test for horizontal matches
+	    //checks for horizontal matches
 	    matches = 1;
 
-	    //scan left
+	    //checks left
 	    for (int c = col - 1; c >= 0; --c) {
-	      if (board[c][row] != piece)
+	    	
+	      if (board[c][row] != piece) {
+	    	  
 	        break;
+	      }
 	      ++matches;
 	    }
 
-	    //scan right
+	    //checks right
 	    for (int c = col + 1; c < colNum; ++c) {
+	    	
 	      if (board[c][row] != piece)
 	        break;
 	      ++matches;
@@ -129,15 +138,16 @@ public class ConnectFourLogic {
 	    if (matches >= 4)
 	      return true;
 
-	    //test for '/' diagonal matches
+	    //checks for '/' diagonal 
 	    matches = 1;
 
 	    //scan left
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row + (col - c);
 
-	      if (r >= rowNum || board[c][r] != piece)
+	      if (r >= rowNum || board[c][r] != piece) {
 	        break;
+	      }
 	      ++matches;
 	    }
 
@@ -145,8 +155,9 @@ public class ConnectFourLogic {
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row + (col - c);
 
-	      if (r < 0 || board[c][r] != piece)
+	      if (r < 0 || board[c][r] != piece) {
 	        break;
+	      }
 	      ++matches;
 	    }
 
@@ -154,24 +165,26 @@ public class ConnectFourLogic {
 	      return true;
 
 
-	    //test for '\' diagonal matches
+	    //checks for '\' diagonal 
 	    matches = 1;
 
-	    //scan left
+	    //checks left 
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row - (col - c);
 
-	      if (r < 0 || board[c][r] != piece)
+	      if (r < 0 || board[c][r] != piece) {
 	        break;
+	      }
 	      ++matches;
 	    }
 
-	    //scan right
+	    //checks right
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row - (col - c);
 
-	      if (r >= rowNum || board[c][r] != piece)
+	      if (r >= rowNum || board[c][r] != piece) {
 	        break;
+	      }
 	      ++matches;
 	    }
 

@@ -1,18 +1,8 @@
-
-import java.util.*;
 /*
- * 
-Connect Four is a two-player game in which the players first 
-choose a color and then take turns dropping colored discs from the top into a seven-column, 
-six-row vertically suspended grid. The pieces fall straight down, 
-occupying the next available space within the column. 
-The objective of the game is to be the first to form a horizontal, vertical, or diagonal line 
-of four of one's own discs.
-
- 
-Write a program to simulate the connect 4 program. 
-One player could be the computer, the other player could be the user.
+ * Alisson Leiva Salazar
  */
+import java.util.*;
+
 public class ConnectFour {
 	
 	//Symbols
@@ -57,7 +47,7 @@ public class ConnectFour {
 		}
 	}
 	
-
+	//Gets user input
 	 private static int inputColumn(Scanner keyboard) {
 	    while (true) {
 	        String line = keyboard.nextLine();
