@@ -114,49 +114,80 @@ public class ConnectFourLogic {
 		
 		// '/' win
 		int matches = 1;
-		
-		//loop down and to the left
-		for(int i = 1; i < rowNum - row; i++) {
-			int x = col - i;
-			int y = row + i;
-			
-			if (x < 0 || x >= colNum) {
-				break;
-			}
-			
-			if (board[x][y] != piece) {
-				break;
-			}
-			
-			++matches;
-		}
-		
-		//Diagonal: loop up and to the right
-		for(int i = 1; i < row; i++) {
-			int x = col + i;
-			int y = row - i;
-			
-			if (x < 0 || x >= colNum) {
-				break;
-			}
-			
-			if (board[x][y] != piece) {
-				break;
-			}
-			
-			++matches;
-		}
-		
-		if (matches >= 4) {
-			System.out.println("'/' Pattern found");
-			return true;
-		}
-			
+	    for (int r = row + 1; r < rowNum; ++r) {
+	      if (board[r][col] != piece)
+	        break;
+	      ++matches;
+	    }
+	    if (matches >= 4)
+	      return true;
 
-		// '\' Diagonal win- top left to bottom right pattern
-		
-	
-		
-		return false;
+	    //test for horizontal matches
+	    matches = 1;
+
+	    //scan left
+	    for (int c = col - 1; c >= 0; --c) {
+	      if (board[row][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    //scan right
+	    for (int c = col + 1; c < colNum; ++c) {
+	      if (board[row][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    if (matches >= 4)
+	      return true;
+
+	    //test for '/' diagonal matches
+	    matches = 1;
+
+	    //scan left
+	    for (int c = col - 1; c >= 0; --c) {
+	      int r = row + (col - c);
+
+	      if (r >= rowNum || board[r][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    //scan right
+	    for (int c = col + 1; c < colNum; ++c) {
+	      int r = row + (col - c);
+
+	      if (r < 0 || board[r][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    if (matches >= 4)
+	      return true;
+
+
+	    //test for '\' diagonal matches
+	    matches = 1;
+
+	    //scan left
+	    for (int c = col - 1; c >= 0; --c) {
+	      int r = row - (col - c);
+
+	      if (r < 0 || board[r][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    //scan right
+	    for (int c = col + 1; c < colNum; ++c) {
+	      int r = row - (col - c);
+
+	      if (r >= rowNum || board[r][c] != piece)
+	        break;
+	      ++matches;
+	    }
+
+	    return (matches >= 4);
 	}
 }
