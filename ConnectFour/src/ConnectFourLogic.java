@@ -94,21 +94,9 @@ public class ConnectFourLogic {
 			}
 		}
 		
-		//System.out.printf("didWin() row: %d col %d\n", row, col);
-		
+
 		char piece = board[col][row];
 		
-		//row and col now contain the location of the most recent piece played=true
-		
-		//test if a vertical pattern is met
-		if (row <= rowNum - 4
-				&& board[col][row + 1] == piece
-				&& board[col][row + 2] == piece
-				&& board[col][row + 3] == piece) {
-			//vertical pattern found
-			System.out.println("Vertical Match Found.");
-			return true;
-		}
 		
 		//horizontal win
 		
