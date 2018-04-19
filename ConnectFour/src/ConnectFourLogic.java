@@ -38,6 +38,7 @@ public class ConnectFourLogic {
 		
 	}
 	
+	//draws the board
 	public void drawBoard() {
 		//loop across rowNum and colNum
 		for(int row=0;row < rowNum;row++) {
@@ -49,7 +50,7 @@ public class ConnectFourLogic {
 		}
 		System.out.println("0123456");
 	}
-	
+	//drops the char into the column specified by the player
 	private boolean dropPiece(int column, int player) {
 		for (int row = rowNum - 1; row >= 0; --row) {
 			if (board[column][row]==' '){
@@ -117,7 +118,7 @@ public class ConnectFourLogic {
 	    //checks for horizontal matches
 	    matches = 1;
 
-	    //checks left
+	    //check left and downward
 	    for (int c = col - 1; c >= 0; --c) {
 	    	
 	      if (board[c][row] != piece) {
@@ -127,11 +128,12 @@ public class ConnectFourLogic {
 	      ++matches;
 	    }
 
-	    //checks right
+	    //check right and upward
 	    for (int c = col + 1; c < colNum; ++c) {
 	    	
-	      if (board[c][row] != piece)
+	      if (board[c][row] != piece) {
 	        break;
+	      }
 	      ++matches;
 	    }
 
@@ -141,7 +143,7 @@ public class ConnectFourLogic {
 	    //checks for '/' diagonal 
 	    matches = 1;
 
-	    //scan left
+	    //check left and downward
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row + (col - c);
 
@@ -151,7 +153,7 @@ public class ConnectFourLogic {
 	      ++matches;
 	    }
 
-	    //scan right
+	    //case where you scan from top-left to bottom-right
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row + (col - c);
 
@@ -168,7 +170,7 @@ public class ConnectFourLogic {
 	    //checks for '\' diagonal 
 	    matches = 1;
 
-	    //checks left 
+	    //check left and downward
 	    for (int c = col - 1; c >= 0; --c) {
 	      int r = row - (col - c);
 
@@ -178,7 +180,7 @@ public class ConnectFourLogic {
 	      ++matches;
 	    }
 
-	    //checks right
+	    //check right and upward
 	    for (int c = col + 1; c < colNum; ++c) {
 	      int r = row - (col - c);
 
