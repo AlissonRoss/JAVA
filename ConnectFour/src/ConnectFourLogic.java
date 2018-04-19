@@ -98,9 +98,8 @@ public class ConnectFourLogic {
 		char piece = board[col][row];
 		
 		
-		//horizontal win
-		
-		// '/' win
+		//test for vertical matches
+	
 		int matches = 1;
 	    for (int r = row + 1; r < rowNum; ++r) {
 	      if (board[col][r] != piece)
