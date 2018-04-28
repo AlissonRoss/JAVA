@@ -21,9 +21,9 @@ public class BinaryTree {
         }
 
         if(currentNode==null && !s.isEmpty()){
-           Node poppedElement= s.pop();
+           currentNode= s.pop();
            System.out.println("Element: "
-                   +poppedElement.element);
+                   +currentNode.element);
             while(currentNode!=null){
                 s.push(currentNode);
                 currentNode=currentNode.leftChild;
