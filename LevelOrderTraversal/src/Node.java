@@ -1,3 +1,7 @@
+/*
+Alisson Leiva Salazar
+ */
+
 public class Node {
     //Element within the Node
     int element;
