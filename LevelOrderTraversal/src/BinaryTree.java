@@ -5,28 +5,33 @@ public class BinaryTree {
 
     Node root;
 
-    void inorderTraversal(){
-        if(root==null) {
+    void inorderTraversal() {
+        if (root == null) {
             return;
         }
 
-        Node currentNode= root;
+        Node currentNode = root;
         //Stack to hold nodes
-        Stack<Node> s=new Stack<>();
+        Stack<Node> s = new Stack<>();
 
         //Pushing the currentNode into the left
-        while(currentNode!=null){
+        while (currentNode != null) {
             s.push(currentNode);
-            currentNode=currentNode.leftChild;
+            currentNode = currentNode.leftChild;
         }
+        while (s.size() > 0){
 
-        if(currentNode==null && !s.isEmpty()){
-           currentNode= s.pop();
-           System.out.println("Element: "
-                   +currentNode.element);
-            while(currentNode!=null){
-                s.push(currentNode);
-                currentNode=currentNode.leftChild;
+                currentNode = s.pop();
+                System.out.println("Element: "
+                        + currentNode.element);
+
+            if (currentNode.rightChild != null) {
+                currentNode = currentNode.rightChild;
+
+                while (currentNode != null) {
+                    s.push(currentNode);
+                    currentNode = currentNode.leftChild;
+                }
             }
 
         }
