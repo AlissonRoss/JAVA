@@ -15,7 +15,7 @@ public class BinaryTree {
         Stack<Node> s=new Stack<>();
 
         //Pushing the currentNode into the left
-        while(root==null){
+        while(currentNode!=null){
             s.push(currentNode);
             currentNode=currentNode.leftChild;
         }
@@ -24,7 +24,7 @@ public class BinaryTree {
            Node poppedElement= s.pop();
            System.out.println("Element: "
                    +poppedElement.element);
-            while(root==null){
+            while(currentNode!=null){
                 s.push(currentNode);
                 currentNode=currentNode.leftChild;
             }
